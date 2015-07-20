@@ -12,7 +12,7 @@
         {
             Assert.IsTrue(StringUtils.IsEmpty(null));
             Assert.IsTrue(StringUtils.IsEmpty(""));
-            
+
             Assert.IsFalse(StringUtils.IsEmpty(" "));
             Assert.IsFalse(StringUtils.IsEmpty("a"));
             Assert.IsFalse(StringUtils.IsEmpty(" a "));
@@ -30,11 +30,35 @@
         }
 
         [TestMethod]
+        public void TestIsAnyEmpty()
+        {
+            Assert.IsTrue(StringUtils.IsAnyEmpty(null));
+            Assert.IsTrue(StringUtils.IsAnyEmpty(null, "a"));
+            Assert.IsTrue(StringUtils.IsAnyEmpty("", "a"));
+            Assert.IsTrue(StringUtils.IsAnyEmpty("a", ""));
+
+            Assert.IsFalse(StringUtils.IsAnyEmpty(" ", "a"));
+            Assert.IsFalse(StringUtils.IsAnyEmpty("a", "b"));
+        }
+
+        [TestMethod]
+        public void TestIsNoneEmpty()
+        {
+            Assert.IsFalse(StringUtils.IsNoneEmpty(null));
+            Assert.IsFalse(StringUtils.IsNoneEmpty(null, "a"));
+            Assert.IsFalse(StringUtils.IsNoneEmpty("", "a"));
+            Assert.IsFalse(StringUtils.IsNoneEmpty("a", ""));
+
+            Assert.IsTrue(StringUtils.IsNoneEmpty(" ", "a"));
+            Assert.IsTrue(StringUtils.IsNoneEmpty("a", "b"));
+        }
+
+        [TestMethod]
         public void TestEqual()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
             Assert.IsTrue(StringUtils.Equals("a", "a"));
-            
+
             Assert.IsFalse(StringUtils.Equals(null, "a"));
             Assert.IsFalse(StringUtils.Equals("a", null));
             Assert.IsFalse(StringUtils.Equals("a", "A"));
