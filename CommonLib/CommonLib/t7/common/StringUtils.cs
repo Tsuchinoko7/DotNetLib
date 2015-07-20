@@ -1,13 +1,22 @@
 ﻿namespace CommonLib
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public class StringUtils
     {
+        public static bool IsEmpty(string val)
+        {
+            if (val == null)
+            {
+                return true;
+            }
+
+            return val.Equals(string.Empty);
+        }
+
+        public static bool IsNotEmpty(string val)
+        {
+            return !IsEmpty(val);
+        }
+        
         public static bool Equals(string val1, string val2)
         {
             if (val1 == null)
