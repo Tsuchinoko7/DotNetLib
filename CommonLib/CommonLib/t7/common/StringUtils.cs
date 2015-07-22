@@ -4,6 +4,11 @@
     {
         private static char[] whitespaceChars = new char[] { ' ', '　', '\f', '\n', '\r', '\t', '\v' };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static bool IsEmpty(string val)
         {
             if (val == null)
@@ -14,11 +19,21 @@
             return val.Equals(string.Empty);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static bool IsNotEmpty(string val)
         {
             return !IsEmpty(val);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vals"></param>
+        /// <returns></returns>
         public static bool IsAnyEmpty(params string[] vals)
         {
             if (vals == null)
@@ -37,11 +52,21 @@
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vals"></param>
+        /// <returns></returns>
         public static bool IsNoneEmpty(params string[] vals)
         {
             return !IsAnyEmpty(vals);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static bool IsBlank(string val)
         {
             if (val == null)
@@ -71,11 +96,22 @@
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static bool IsNotBlank(string val)
         {
             return !IsBlank(val);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val1"></param>
+        /// <param name="val2"></param>
+        /// <returns></returns>
         public static bool Equals(string val1, string val2)
         {
             if (val1 == null)
