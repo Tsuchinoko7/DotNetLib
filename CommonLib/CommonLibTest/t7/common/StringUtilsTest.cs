@@ -54,6 +54,32 @@
         }
 
         [TestMethod]
+        public void TestIsBlank()
+        {
+            Assert.IsTrue(StringUtils.IsBlank(null));
+            Assert.IsTrue(StringUtils.IsBlank(""));
+            Assert.IsTrue(StringUtils.IsBlank(" "));
+            Assert.IsTrue(StringUtils.IsBlank("  "));
+            Assert.IsTrue(StringUtils.IsBlank("　"));
+
+            Assert.IsFalse(StringUtils.IsBlank("a"));
+            Assert.IsFalse(StringUtils.IsBlank(" a "));
+        }
+
+        [TestMethod]
+        public void TestIsNotBlank()
+        {
+            Assert.IsFalse(StringUtils.IsNotBlank(null));
+            Assert.IsFalse(StringUtils.IsNotBlank(""));
+            Assert.IsFalse(StringUtils.IsNotBlank(" "));
+            Assert.IsFalse(StringUtils.IsNotBlank("  "));
+            Assert.IsFalse(StringUtils.IsNotBlank("　"));
+
+            Assert.IsTrue(StringUtils.IsNotBlank("a"));
+            Assert.IsTrue(StringUtils.IsNotBlank(" a "));
+        }
+
+        [TestMethod]
         public void TestEqual()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
