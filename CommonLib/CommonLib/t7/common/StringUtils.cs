@@ -109,6 +109,39 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="vals"></param>
+        /// <returns></returns>
+        public static bool IsAnyBlank(params string[] vals)
+        {
+            if (vals == null)
+            {
+                return true;
+            }
+
+            foreach (var val in vals)
+            {
+                if (IsBlank(val))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vals"></param>
+        /// <returns></returns>
+        public static bool IsNoneBlank(params string[] vals)
+        {
+            return !IsAnyBlank(vals);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>

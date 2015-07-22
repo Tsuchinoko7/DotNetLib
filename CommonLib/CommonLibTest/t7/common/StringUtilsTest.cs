@@ -80,6 +80,32 @@
         }
 
         [TestMethod]
+        public void TestIsAnyBlank()
+        {
+            Assert.IsTrue(StringUtils.IsAnyBlank(null));
+            Assert.IsTrue(StringUtils.IsAnyBlank(null, "a"));
+            Assert.IsTrue(StringUtils.IsAnyBlank(null, null));
+            Assert.IsTrue(StringUtils.IsAnyBlank("", "a"));
+            Assert.IsTrue(StringUtils.IsAnyBlank("a", ""));
+            Assert.IsTrue(StringUtils.IsAnyBlank(" ", "a"));
+
+            Assert.IsFalse(StringUtils.IsAnyBlank("a", "b"));
+        }
+
+        [TestMethod]
+        public void TestIsNoneBlank()
+        {
+            Assert.IsFalse(StringUtils.IsNoneBlank(null));
+            Assert.IsFalse(StringUtils.IsNoneBlank(null, "a"));
+            Assert.IsFalse(StringUtils.IsNoneBlank(null, null));
+            Assert.IsFalse(StringUtils.IsNoneBlank("", "a"));
+            Assert.IsFalse(StringUtils.IsNoneBlank("a", ""));
+            Assert.IsFalse(StringUtils.IsNoneBlank(" ", "a"));
+
+            Assert.IsTrue(StringUtils.IsNoneBlank("a", "b"));
+        }
+
+        [TestMethod]
         public void TestEqual()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
