@@ -139,6 +139,16 @@
             return !IsAnyBlank(vals);
         }
 
+        public static string Trim(string val)
+        {
+            if  (val == null)
+            {
+                return null;
+            }
+
+            return val.Trim();
+        }
+
         /// <summary>
         /// 
         /// </summary>
