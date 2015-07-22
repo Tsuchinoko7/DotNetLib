@@ -1,4 +1,7 @@
-﻿namespace CommonLibTest
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CommonLib;
+
+namespace CommonLib.Tests
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -8,7 +11,7 @@
     public class StringUtilsTest
     {
         [TestMethod]
-        public void TestIsEmpty()
+        public void IsEmptyTest()
         {
             Assert.IsTrue(StringUtils.IsEmpty(null));
             Assert.IsTrue(StringUtils.IsEmpty(""));
@@ -19,7 +22,7 @@
         }
 
         [TestMethod]
-        public void TestIsNotEmpty()
+        public void IsNotEmptyTest()
         {
             Assert.IsFalse(StringUtils.IsNotEmpty(null));
             Assert.IsFalse(StringUtils.IsNotEmpty(""));
@@ -30,7 +33,7 @@
         }
 
         [TestMethod]
-        public void TestIsAnyEmpty()
+        public void IsAnyEmptyTest()
         {
             Assert.IsTrue(StringUtils.IsAnyEmpty(null));
             Assert.IsTrue(StringUtils.IsAnyEmpty(null, "a"));
@@ -42,7 +45,7 @@
         }
 
         [TestMethod]
-        public void TestIsNoneEmpty()
+        public void IsNoneEmptyTest()
         {
             Assert.IsFalse(StringUtils.IsNoneEmpty(null));
             Assert.IsFalse(StringUtils.IsNoneEmpty(null, "a"));
@@ -54,7 +57,7 @@
         }
 
         [TestMethod]
-        public void TestIsBlank()
+        public void IsBlankTest()
         {
             Assert.IsTrue(StringUtils.IsBlank(null));
             Assert.IsTrue(StringUtils.IsBlank(""));
@@ -67,7 +70,7 @@
         }
 
         [TestMethod]
-        public void TestIsNotBlank()
+        public void IsNotBlankTest()
         {
             Assert.IsFalse(StringUtils.IsNotBlank(null));
             Assert.IsFalse(StringUtils.IsNotBlank(""));
@@ -80,7 +83,7 @@
         }
 
         [TestMethod]
-        public void TestIsAnyBlank()
+        public void IsAnyBlankTest()
         {
             Assert.IsTrue(StringUtils.IsAnyBlank(null));
             Assert.IsTrue(StringUtils.IsAnyBlank(null, "a"));
@@ -93,7 +96,7 @@
         }
 
         [TestMethod]
-        public void TestIsNoneBlank()
+        public void IsNoneBlankTest()
         {
             Assert.IsFalse(StringUtils.IsNoneBlank(null));
             Assert.IsFalse(StringUtils.IsNoneBlank(null, "a"));
@@ -106,7 +109,7 @@
         }
 
         [TestMethod]
-        public void TestEqual()
+        public void EqualTest()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
             Assert.IsTrue(StringUtils.Equals("a", "a"));
