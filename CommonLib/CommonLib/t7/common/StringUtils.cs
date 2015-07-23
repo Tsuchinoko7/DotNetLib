@@ -2,8 +2,6 @@
 {
     public class StringUtils
     {
-        private static char[] whitespaceChars = new char[] { ' ', '　', '\f', '\n', '\r', '\t', '\v' };
-
         /// <summary>
         /// 
         /// </summary>
@@ -11,12 +9,7 @@
         /// <returns></returns>
         public static bool IsEmpty(string val)
         {
-            if (val == null)
-            {
-                return true;
-            }
-
-            return val.Equals(string.Empty);
+            return val == null || val.Length == 0;
         }
 
         /// <summary>
@@ -74,20 +67,11 @@
                 return true;
             }
 
-            foreach (var c in val)
+            int len = val.Length;
+
+            for (int i = 0; i < len; i++)
             {
-                bool isWhitespaceChar = false;
-
-                foreach (var whitespaceChar in whitespaceChars)
-                {
-                    if (c.Equals(whitespaceChar))
-                    {
-                        isWhitespaceChar = true;
-                        break;
-                    }
-                }
-
-                if (!isWhitespaceChar)
+                if (!char.IsWhiteSpace(val[i]))
                 {
                     return false;
                 }
@@ -146,12 +130,7 @@
         /// <returns></returns>
         public static string Trim(string val)
         {
-            if (val == null)
-            {
-                return null;
-            }
-
-            return val.Trim();
+            return val == null ? null : val.Trim();
         }
 
         /// <summary>
@@ -161,14 +140,9 @@
         /// <returns></returns>
         public static string TrimToNull(string val)
         {
-            if (val == null)
-            {
-                return null;
-            }
+            string result = Trim(val);
 
-            string result = val.Trim();
-
-            return result.Length > 0 ? result : null;
+            return IsEmpty(result) ? null : result;
         }
 
         /// <summary>
