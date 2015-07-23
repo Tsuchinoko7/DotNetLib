@@ -119,6 +119,16 @@ namespace CommonLib.Tests
         }
 
         [TestMethod]
+        public void TrimToNullest()
+        {
+            Assert.AreEqual(null, StringUtils.TrimToNull(null));
+            Assert.AreEqual(null, StringUtils.TrimToNull(""));
+            Assert.AreEqual(null, StringUtils.TrimToNull(" "));
+            Assert.AreEqual("a", StringUtils.TrimToNull("a"));
+            Assert.AreEqual("a", StringUtils.TrimToNull(" a "));
+        }
+
+        [TestMethod]
         public void EqualTest()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));

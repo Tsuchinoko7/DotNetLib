@@ -139,14 +139,36 @@
             return !IsAnyBlank(vals);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static string Trim(string val)
         {
-            if  (val == null)
+            if (val == null)
             {
                 return null;
             }
 
             return val.Trim();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string TrimToNull(string val)
+        {
+            if (val == null)
+            {
+                return null;
+            }
+
+            string result = val.Trim();
+
+            return result.Length > 0 ? result : null;
         }
 
         /// <summary>
