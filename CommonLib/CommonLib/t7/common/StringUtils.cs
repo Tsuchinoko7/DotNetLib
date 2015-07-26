@@ -1,4 +1,4 @@
-﻿namespace CommonLib
+﻿namespace t7.common
 {
     public class StringUtils
     {
