@@ -1,13 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CommonLib;
-
-namespace CommonLib.Tests
+﻿namespace CommonLib.Tests
 {
-    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using CommonLib;
+    using t7.common;
 
-    [TestClass]
+    [TestClass()]
     public class StringUtilsTest
     {
         [TestMethod]
