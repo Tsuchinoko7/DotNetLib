@@ -84,26 +84,28 @@
         public void IsAnyBlankTest()
         {
             Assert.IsTrue(StringUtils.IsAnyBlank(null));
-            Assert.IsTrue(StringUtils.IsAnyBlank(null, "a"));
+            Assert.IsTrue(StringUtils.IsAnyBlank(null, "foo"));
             Assert.IsTrue(StringUtils.IsAnyBlank(null, null));
-            Assert.IsTrue(StringUtils.IsAnyBlank("", "a"));
-            Assert.IsTrue(StringUtils.IsAnyBlank("a", ""));
-            Assert.IsTrue(StringUtils.IsAnyBlank(" ", "a"));
+            Assert.IsTrue(StringUtils.IsAnyBlank("", "bar"));
+            Assert.IsTrue(StringUtils.IsAnyBlank("bob", ""));
+            Assert.IsTrue(StringUtils.IsAnyBlank("  bob  ", null));
+            Assert.IsTrue(StringUtils.IsAnyBlank(" ", "bar"));
 
-            Assert.IsFalse(StringUtils.IsAnyBlank("a", "b"));
+            Assert.IsFalse(StringUtils.IsAnyBlank("foo", "bar"));
         }
 
         [TestMethod]
         public void IsNoneBlankTest()
         {
             Assert.IsFalse(StringUtils.IsNoneBlank(null));
-            Assert.IsFalse(StringUtils.IsNoneBlank(null, "a"));
+            Assert.IsFalse(StringUtils.IsNoneBlank(null, "foo"));
             Assert.IsFalse(StringUtils.IsNoneBlank(null, null));
-            Assert.IsFalse(StringUtils.IsNoneBlank("", "a"));
-            Assert.IsFalse(StringUtils.IsNoneBlank("a", ""));
-            Assert.IsFalse(StringUtils.IsNoneBlank(" ", "a"));
+            Assert.IsFalse(StringUtils.IsNoneBlank("", "bar"));
+            Assert.IsFalse(StringUtils.IsNoneBlank("bob", ""));
+            Assert.IsFalse(StringUtils.IsNoneBlank("  bob  ", null));
+            Assert.IsFalse(StringUtils.IsNoneBlank(" ", "bar"));
 
-            Assert.IsTrue(StringUtils.IsNoneBlank("a", "b"));
+            Assert.IsTrue(StringUtils.IsNoneBlank("foo", "bar"));
         }
 
         [TestMethod]
@@ -111,9 +113,9 @@
         {
             Assert.AreEqual(null, StringUtils.Trim(null));
             Assert.AreEqual("", StringUtils.Trim(""));
-            Assert.AreEqual("", StringUtils.Trim(" "));
-            Assert.AreEqual("a", StringUtils.Trim("a"));
-            Assert.AreEqual("a", StringUtils.Trim(" a "));
+            Assert.AreEqual("", StringUtils.Trim("     "));
+            Assert.AreEqual("abc", StringUtils.Trim("abc"));
+            Assert.AreEqual("abc", StringUtils.Trim("    abc    "));
         }
 
         [TestMethod]
@@ -121,9 +123,9 @@
         {
             Assert.AreEqual(null, StringUtils.TrimToNull(null));
             Assert.AreEqual(null, StringUtils.TrimToNull(""));
-            Assert.AreEqual(null, StringUtils.TrimToNull(" "));
-            Assert.AreEqual("a", StringUtils.TrimToNull("a"));
-            Assert.AreEqual("a", StringUtils.TrimToNull(" a "));
+            Assert.AreEqual(null, StringUtils.TrimToNull("     "));
+            Assert.AreEqual("abc", StringUtils.TrimToNull("abc"));
+            Assert.AreEqual("abc", StringUtils.TrimToNull("    abc    "));
         }
 
         [TestMethod]
