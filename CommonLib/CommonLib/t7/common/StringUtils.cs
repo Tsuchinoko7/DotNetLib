@@ -168,6 +168,16 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string StripToNull(string val)
+        {
+            return TrimToNull(val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>
