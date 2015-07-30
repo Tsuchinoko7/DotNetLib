@@ -69,7 +69,7 @@
 
             int len = val.Length;
 
-            for (int i = (len -1); i >= 0; i--)
+            for (int i = (len - 1); i >= 0; i--)
             {
                 if (!char.IsWhiteSpace(val[i]))
                 {
@@ -153,6 +153,16 @@
         public static string TrimToEmpty(string val)
         {
             return val == null ? string.Empty : Trim(val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string Strip(string val)
+        {
+            return Trim(val);
         }
 
         /// <summary>

@@ -139,6 +139,19 @@
         }
 
         [TestMethod]
+        public void StripTest()
+        {
+            Assert.AreEqual(null, StringUtils.Strip(null));
+            Assert.AreEqual("", StringUtils.Strip(""));
+            Assert.AreEqual("", StringUtils.Strip("   "));
+            Assert.AreEqual("abc", StringUtils.Strip("abc"));
+            Assert.AreEqual("abc", StringUtils.Strip("  abc"));
+            Assert.AreEqual("abc", StringUtils.Strip("abc  "));
+            Assert.AreEqual("abc", StringUtils.Strip(" abc "));
+            Assert.AreEqual("ab c", StringUtils.Strip(" ab c "));
+        }
+
+        [TestMethod]
         public void EqualTest()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
