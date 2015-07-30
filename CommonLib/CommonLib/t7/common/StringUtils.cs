@@ -148,6 +148,16 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string TrimToEmpty(string val)
+        {
+            return val == null ? string.Empty : Trim(val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>

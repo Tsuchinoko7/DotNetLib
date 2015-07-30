@@ -119,13 +119,23 @@
         }
 
         [TestMethod]
-        public void TrimToNullest()
+        public void TrimToNullTest()
         {
             Assert.AreEqual(null, StringUtils.TrimToNull(null));
             Assert.AreEqual(null, StringUtils.TrimToNull(""));
             Assert.AreEqual(null, StringUtils.TrimToNull("     "));
             Assert.AreEqual("abc", StringUtils.TrimToNull("abc"));
             Assert.AreEqual("abc", StringUtils.TrimToNull("    abc    "));
+        }
+
+        [TestMethod]
+        public void TrimToEmptyTest()
+        {
+            Assert.AreEqual("", StringUtils.TrimToEmpty(null));
+            Assert.AreEqual("", StringUtils.TrimToEmpty(""));
+            Assert.AreEqual("", StringUtils.TrimToEmpty("     "));
+            Assert.AreEqual("abc", StringUtils.TrimToEmpty("abc"));
+            Assert.AreEqual("abc", StringUtils.TrimToEmpty("    abc    "));
         }
 
         [TestMethod]
