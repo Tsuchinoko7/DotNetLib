@@ -62,14 +62,14 @@
         /// <returns></returns>
         public static bool IsBlank(string val)
         {
-            if (val == null)
+            if (val == null || val.Length == 0)
             {
                 return true;
             }
 
             int len = val.Length;
 
-            for (int i = 0; i < len; i++)
+            for (int i = (len -1); i >= 0; i--)
             {
                 if (!char.IsWhiteSpace(val[i]))
                 {
