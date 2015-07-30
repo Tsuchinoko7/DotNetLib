@@ -178,6 +178,16 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string StripToEmpty(string val)
+        {
+            return TrimToEmpty(val);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>
