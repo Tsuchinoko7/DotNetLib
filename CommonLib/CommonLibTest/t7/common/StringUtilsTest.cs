@@ -13,8 +13,8 @@
             Assert.IsTrue(StringUtils.IsEmpty(""));
 
             Assert.IsFalse(StringUtils.IsEmpty(" "));
-            Assert.IsFalse(StringUtils.IsEmpty("a"));
-            Assert.IsFalse(StringUtils.IsEmpty(" a "));
+            Assert.IsFalse(StringUtils.IsEmpty("bob"));
+            Assert.IsFalse(StringUtils.IsEmpty("  bob  "));
         }
 
         [TestMethod]
@@ -24,32 +24,34 @@
             Assert.IsFalse(StringUtils.IsNotEmpty(""));
 
             Assert.IsTrue(StringUtils.IsNotEmpty(" "));
-            Assert.IsTrue(StringUtils.IsNotEmpty("a"));
-            Assert.IsTrue(StringUtils.IsNotEmpty(" a "));
+            Assert.IsTrue(StringUtils.IsNotEmpty("bob"));
+            Assert.IsTrue(StringUtils.IsNotEmpty("  bob  "));
         }
 
         [TestMethod]
         public void IsAnyEmptyTest()
         {
             Assert.IsTrue(StringUtils.IsAnyEmpty(null));
-            Assert.IsTrue(StringUtils.IsAnyEmpty(null, "a"));
-            Assert.IsTrue(StringUtils.IsAnyEmpty("", "a"));
-            Assert.IsTrue(StringUtils.IsAnyEmpty("a", ""));
+            Assert.IsTrue(StringUtils.IsAnyEmpty(null, "foo"));
+            Assert.IsTrue(StringUtils.IsAnyEmpty("", "bar"));
+            Assert.IsTrue(StringUtils.IsAnyEmpty("bob", ""));
+            Assert.IsTrue(StringUtils.IsAnyEmpty("  bob  ", null));
 
-            Assert.IsFalse(StringUtils.IsAnyEmpty(" ", "a"));
-            Assert.IsFalse(StringUtils.IsAnyEmpty("a", "b"));
+            Assert.IsFalse(StringUtils.IsAnyEmpty(" ", "bar"));
+            Assert.IsFalse(StringUtils.IsAnyEmpty("foo", "bar"));
         }
 
         [TestMethod]
         public void IsNoneEmptyTest()
         {
             Assert.IsFalse(StringUtils.IsNoneEmpty(null));
-            Assert.IsFalse(StringUtils.IsNoneEmpty(null, "a"));
-            Assert.IsFalse(StringUtils.IsNoneEmpty("", "a"));
-            Assert.IsFalse(StringUtils.IsNoneEmpty("a", ""));
+            Assert.IsFalse(StringUtils.IsNoneEmpty(null, "foo"));
+            Assert.IsFalse(StringUtils.IsNoneEmpty("", "bar"));
+            Assert.IsFalse(StringUtils.IsNoneEmpty("bob", ""));
+            Assert.IsFalse(StringUtils.IsNoneEmpty("  bob  ", null));
 
-            Assert.IsTrue(StringUtils.IsNoneEmpty(" ", "a"));
-            Assert.IsTrue(StringUtils.IsNoneEmpty("a", "b"));
+            Assert.IsTrue(StringUtils.IsNoneEmpty(" ", "bar"));
+            Assert.IsTrue(StringUtils.IsNoneEmpty("foo", "bar"));
         }
 
         [TestMethod]
@@ -61,8 +63,8 @@
             Assert.IsTrue(StringUtils.IsBlank("  "));
             Assert.IsTrue(StringUtils.IsBlank("　"));
 
-            Assert.IsFalse(StringUtils.IsBlank("a"));
-            Assert.IsFalse(StringUtils.IsBlank(" a "));
+            Assert.IsFalse(StringUtils.IsBlank("bob"));
+            Assert.IsFalse(StringUtils.IsBlank("  bob  "));
         }
 
         [TestMethod]
@@ -74,8 +76,8 @@
             Assert.IsFalse(StringUtils.IsNotBlank("  "));
             Assert.IsFalse(StringUtils.IsNotBlank("　"));
 
-            Assert.IsTrue(StringUtils.IsNotBlank("a"));
-            Assert.IsTrue(StringUtils.IsNotBlank(" a "));
+            Assert.IsTrue(StringUtils.IsNotBlank("bob"));
+            Assert.IsTrue(StringUtils.IsNotBlank("  bob  "));
         }
 
         [TestMethod]
