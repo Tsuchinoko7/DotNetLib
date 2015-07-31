@@ -219,6 +219,26 @@ namespace CommonLib.Tests
         }
 
         [TestMethod]
+        public void StripAllTest()
+        {
+            Assert.AreEqual(null, StringUtils.StripAll(null));
+            CollectionAssert.AreEqual(new string[0], StringUtils.StripAll(new string[0]));
+            CollectionAssert.AreEqual(new string[] { "abc", "abc" }, StringUtils.StripAll(new string[] { "abc", "  abc" }));
+            CollectionAssert.AreEqual(new string[] { "abc", null }, StringUtils.StripAll(new string[] { "abc  ", null }));
+        }
+
+        [TestMethod]
+        public void StripAllStripCharsTest()
+        {
+            Assert.AreEqual(null, StringUtils.StripAll(null, null));
+            CollectionAssert.AreEqual(new string[0], StringUtils.StripAll(new string[0], null));
+            CollectionAssert.AreEqual(new string[] { "abc", "abc" }, StringUtils.StripAll(new string[] { "abc", "  abc" }, null));
+            CollectionAssert.AreEqual(new string[] { "abc", null }, StringUtils.StripAll(new string[] { "abc  ", null }, null));
+            CollectionAssert.AreEqual(new string[] { "abc  ", null }, StringUtils.StripAll(new string[] { "abc  ", null }, "yz"));
+            CollectionAssert.AreEqual(new string[] { "abc", null }, StringUtils.StripAll(new string[] { "yabcz", null }, "yz"));
+        }
+
+        [TestMethod]
         public void EqualTest()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));

@@ -267,6 +267,40 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="vals"></param>
+        /// <returns></returns>
+        public static string[] StripAll(string[] vals)
+        {
+            return StripAll(vals, null);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vals"></param>
+        /// <param name="stripChars"></param>
+        /// <returns></returns>
+        public static string[] StripAll(string[] vals, string stripChars)
+        {
+            if (vals == null || vals.Length == 0)
+            {
+                return vals;
+            }
+
+            int valsLen = vals.Length;
+            string[] array = new string[vals.Length];
+
+            for (int i = 0; i < valsLen; i++)
+            {
+                array[i] = Strip(vals[i], stripChars);
+            }
+
+            return array;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>
