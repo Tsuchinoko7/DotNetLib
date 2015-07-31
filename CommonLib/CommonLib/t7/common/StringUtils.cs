@@ -188,6 +188,85 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="val"></param>
+        /// <param name="stripChars"></param>
+        /// <returns></returns>
+        public static string Strip(string val, string stripChars)
+        {
+            string strip = StripStart(val, stripChars);
+            return StripEnd(strip, stripChars);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="stripChars"></param>
+        /// <returns></returns>
+        public static string StripStart(string val, string stripChars)
+        {
+            if (val == null || val.Length == 0)
+            {
+                return val;
+            }
+
+            int len = val.Length;
+            int start = 0;
+
+            if (stripChars == null)
+            {
+                while (len > start && char.IsWhiteSpace(val[start]))
+                {
+                    start++;
+                }
+            }
+            else
+            {
+                while (len > start && stripChars.IndexOf(val[start]) != -1)
+                {
+                    start++;
+                }
+            }
+
+            return val.Substring(start);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="stripChars"></param>
+        /// <returns></returns>
+        public static string StripEnd(string val, string stripChars)
+        {
+            if (val == null || val.Length == 0)
+            {
+                return val;
+            }
+
+            int end = val.Length;
+
+            if (stripChars == null)
+            {
+                while (end > 0 && char.IsWhiteSpace(val[end - 1]))
+                {
+                    end--;
+                }
+            }
+            else
+            {
+                while (end > 0 && stripChars.IndexOf(val[end - 1]) != -1)
+                {
+                    end--;
+                }
+            }
+
+            return val.Substring(0, end);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="val1"></param>
         /// <param name="val2"></param>
         /// <returns></returns>

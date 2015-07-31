@@ -1,4 +1,6 @@
-﻿namespace CommonLib.Tests
+﻿using t7.common;
+
+namespace CommonLib.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using t7.common;
@@ -175,6 +177,45 @@
             Assert.AreEqual("abc", StringUtils.StripToEmpty("abc  "));
             Assert.AreEqual("abc", StringUtils.StripToEmpty(" abc "));
             Assert.AreEqual("ab c", StringUtils.StripToEmpty(" ab c "));
+        }
+
+        [TestMethod]
+        public void StripCharsTest()
+        {
+            Assert.AreEqual(null, StringUtils.Strip(null, null));
+            Assert.AreEqual("", StringUtils.Strip("", null));
+            Assert.AreEqual("abc", StringUtils.Strip("abc", null));
+            Assert.AreEqual("abc", StringUtils.Strip("  abc", null));
+            Assert.AreEqual("abc", StringUtils.Strip("abc  ", null));
+            Assert.AreEqual("abc", StringUtils.Strip(" abc ", null));
+            Assert.AreEqual("  abc", StringUtils.Strip("  abcyx", "xyz"));
+        }
+
+        [TestMethod]
+        public void StripStartTest()
+        {
+            Assert.AreEqual(null, StringUtils.StripStart(null, null));
+            Assert.AreEqual("", StringUtils.StripStart("", null));
+            Assert.AreEqual("abc", StringUtils.StripStart("abc", ""));
+            Assert.AreEqual("abc", StringUtils.StripStart("abc", null));
+            Assert.AreEqual("abc", StringUtils.StripStart("  abc", null));
+            Assert.AreEqual("abc  ", StringUtils.StripStart("abc  ", null));
+            Assert.AreEqual("abc ", StringUtils.StripStart(" abc ", null));
+            Assert.AreEqual("abc  ", StringUtils.StripStart("yxabc  ", "xyz"));
+        }
+
+        [TestMethod]
+        public void StripEndTest()
+        {
+            Assert.AreEqual(null, StringUtils.StripEnd(null, null));
+            Assert.AreEqual("", StringUtils.StripEnd("", null));
+            Assert.AreEqual("abc", StringUtils.StripEnd("abc", ""));
+            Assert.AreEqual("abc", StringUtils.StripEnd("abc", null));
+            Assert.AreEqual("  abc", StringUtils.StripEnd("  abc", null));
+            Assert.AreEqual("abc", StringUtils.StripEnd("abc  ", null));
+            Assert.AreEqual(" abc", StringUtils.StripEnd(" abc ", null));
+            Assert.AreEqual("  abc", StringUtils.StripEnd("  abcyx", "xyz"));
+            Assert.AreEqual("12", StringUtils.StripEnd("120.00", ".0"));
         }
 
         [TestMethod]
