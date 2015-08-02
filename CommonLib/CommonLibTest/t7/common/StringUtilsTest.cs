@@ -1,6 +1,4 @@
-﻿using t7.common;
-
-namespace CommonLib.Tests
+﻿namespace CommonLib.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using t7.common;
