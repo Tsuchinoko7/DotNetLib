@@ -11,6 +11,22 @@
 
             this.KeyPress += (sender, e) =>
             {
+                if (e.KeyChar == '+')
+                {
+                    this.Add();
+
+                    e.Handled = true;
+                    return;
+                }
+
+                if (e.KeyChar == '-')
+                {
+                    this.Subtract();
+
+                    e.Handled = true;
+                    return;
+                }
+                
                 if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 {
                     e.Handled = true;
@@ -33,6 +49,32 @@
             set
             {
                 base.TextAlign = value;
+            }
+        }
+
+        private void Add()
+        {
+            if (this.Text.Length == 0)
+            {
+                return;
+            }
+
+            if (this.Text.Substring(0, 1).Equals("-"))
+            {
+                this.Text = this.Text.Substring(1);
+            }
+        }
+
+        private void Subtract()
+        {
+            if (this.Text.Length == 0)
+            {
+                return;
+            }
+
+            if (!this.Text.Substring(0, 1).Equals("-"))
+            {
+                this.Text = "-" + this.Text;
             }
         }
     }
