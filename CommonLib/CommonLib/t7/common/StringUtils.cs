@@ -313,5 +313,21 @@
 
             return val1.Equals(val2);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val1"></param>
+        /// <param name="val2"></param>
+        /// <returns></returns>
+        public static bool EqualsIgnoreCase(string val1, string val2)
+        {
+            if (val1 == null || val2 == null)
+            {
+                return val1 == val2;
+            }
+
+            return val1.ToLower().Equals(val2.ToLower());
+        }
     }
 }

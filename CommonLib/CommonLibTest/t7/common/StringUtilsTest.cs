@@ -248,5 +248,16 @@ namespace CommonLib.Tests
             Assert.IsFalse(StringUtils.Equals("abc", null));
             Assert.IsFalse(StringUtils.Equals("abc", "ABC"));
         }
+
+        [TestMethod]
+        public void EqualsIgnoreCaseTest()
+        {
+            Assert.IsTrue(StringUtils.EqualsIgnoreCase(null, null));
+            Assert.IsTrue(StringUtils.EqualsIgnoreCase("abc", "abc"));
+            Assert.IsTrue(StringUtils.EqualsIgnoreCase("abc", "ABC"));
+
+            Assert.IsFalse(StringUtils.EqualsIgnoreCase(null, "abc"));
+            Assert.IsFalse(StringUtils.EqualsIgnoreCase("abc", null));
+        }
     }
 }
