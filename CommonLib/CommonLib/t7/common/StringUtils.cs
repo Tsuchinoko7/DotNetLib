@@ -2,6 +2,8 @@
 {
     public class StringUtils
     {
+        private const int INDEX_NOT_FOUND = -1;
+
         /// <summary>
         /// 
         /// </summary>
@@ -222,7 +224,7 @@
             }
             else
             {
-                while (len > start && stripChars.IndexOf(val[start]) != -1)
+                while (len > start && stripChars.IndexOf(val[start]) != INDEX_NOT_FOUND)
                 {
                     start++;
                 }
@@ -255,7 +257,7 @@
             }
             else
             {
-                while (end > 0 && stripChars.IndexOf(val[end - 1]) != -1)
+                while (end > 0 && stripChars.IndexOf(val[end - 1]) != INDEX_NOT_FOUND)
                 {
                     end--;
                 }
@@ -328,6 +330,94 @@
             }
 
             return val1.ToLower().Equals(val2.ToLower());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="searchChar"></param>
+        /// <returns></returns>
+        public static int IndexOf(string val, char searchChar)
+        {
+            if (IsEmpty(val))
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            return val.IndexOf(searchChar);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="searchChar"></param>
+        /// <param name="startPos"></param>
+        /// <returns></returns>
+        public static int IndexOf(string val, char searchChar, int startPos)
+        {
+            if (IsEmpty(val))
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            if (val.Length < startPos)
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            return val.IndexOf(searchChar, startPos < 0 ? 0 : startPos);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="searchString"></param>
+        /// <returns></returns>
+        public static int IndexOf(string val, string searchString)
+        {
+            if (val == null || searchString == null)
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            if(IsEmpty(searchString))
+            {
+                return 0;
+            }
+
+            return val.IndexOf(searchString);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="searchString"></param>
+        /// <param name="startPos"></param>
+        /// <returns></returns>
+        public static int IndexOf(string val, string searchString, int startPos)
+        {
+            if (val == null || searchString == null)
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            int len = val.Length;
+
+            if (IsEmpty(searchString))
+            {
+                return len < startPos ? len : startPos;
+            }
+
+            if (len < startPos)
+            {
+                return INDEX_NOT_FOUND;
+            }
+
+            return val.IndexOf(searchString, startPos < 0 ? 0 : startPos);
         }
     }
 }

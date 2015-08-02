@@ -259,5 +259,42 @@ namespace CommonLib.Tests
             Assert.IsFalse(StringUtils.EqualsIgnoreCase(null, "abc"));
             Assert.IsFalse(StringUtils.EqualsIgnoreCase("abc", null));
         }
+
+        [TestMethod]
+        public void IndexOfTest()
+        {
+            Assert.AreEqual(-1, StringUtils.IndexOf(null, ' '));
+            Assert.AreEqual(-1, StringUtils.IndexOf("", ' '));
+            Assert.AreEqual(0, StringUtils.IndexOf("aabaabaa", 'a'));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", 'b'));
+        }
+
+        [TestMethod]
+        public void IndexOfStartPosTest()
+        {
+            Assert.AreEqual(-1, StringUtils.IndexOf(null, ' ', 1));
+            Assert.AreEqual(-1, StringUtils.IndexOf("", ' ', 1));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", 'b', 0));
+            Assert.AreEqual(5, StringUtils.IndexOf("aabaabaa", 'b', 3));
+            Assert.AreEqual(-1, StringUtils.IndexOf("aabaabaa", 'b', 9));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", 'b', -1));
+        }
+
+        [TestMethod]
+        public void IndexOfStringTest()
+        {
+            Assert.AreEqual(-1, StringUtils.IndexOf(null, "", 1));
+            Assert.AreEqual(-1, StringUtils.IndexOf("", null, 1));
+            Assert.AreEqual(0, StringUtils.IndexOf("", "", 0));
+            Assert.AreEqual(-1, StringUtils.IndexOf("", "a", 0));
+            Assert.AreEqual(0, StringUtils.IndexOf("aabaabaa", "a", 0));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", "b", 0));
+            Assert.AreEqual(1, StringUtils.IndexOf("aabaabaa", "ab", 0));
+            Assert.AreEqual(5, StringUtils.IndexOf("aabaabaa", "b", 3));
+            Assert.AreEqual(-1, StringUtils.IndexOf("aabaabaa", "b", 9));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", "b", -1));
+            Assert.AreEqual(2, StringUtils.IndexOf("aabaabaa", "", 2));
+            Assert.AreEqual(3, StringUtils.IndexOf("abc", "", 9));
+        }
     }
 }
