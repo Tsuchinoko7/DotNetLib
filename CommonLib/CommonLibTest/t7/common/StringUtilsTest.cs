@@ -242,11 +242,11 @@ namespace CommonLib.Tests
         public void EqualTest()
         {
             Assert.IsTrue(StringUtils.Equals(null, null));
-            Assert.IsTrue(StringUtils.Equals("a", "a"));
+            Assert.IsTrue(StringUtils.Equals("abc", "abc"));
 
-            Assert.IsFalse(StringUtils.Equals(null, "a"));
-            Assert.IsFalse(StringUtils.Equals("a", null));
-            Assert.IsFalse(StringUtils.Equals("a", "A"));
+            Assert.IsFalse(StringUtils.Equals(null, "abc"));
+            Assert.IsFalse(StringUtils.Equals("abc", null));
+            Assert.IsFalse(StringUtils.Equals("abc", "ABC"));
         }
     }
 }
