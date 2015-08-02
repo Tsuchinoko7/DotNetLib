@@ -11,7 +11,6 @@
 
             this.KeyPress += (sender, e) =>
             {
-
                 if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 {
                     e.Handled = true;
@@ -24,7 +23,7 @@
         /// </summary>
         [DefaultValue(HorizontalAlignment.Right)]
         [Description("コントロールでテキストをどのように配置するかを取得または設定します。")]
-        new public HorizontalAlignment TextAlign
+        public new HorizontalAlignment TextAlign
         {
             get
             {
