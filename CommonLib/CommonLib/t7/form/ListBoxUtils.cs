@@ -4,12 +4,12 @@
 
     public class ListBoxUtils
     {
-        public static void TopScroll(ListBox control)
+        public static void ScrollTop(ListBox control)
         {
             control.TopIndex = 0;
         }
 
-        public static void BottomScroll(ListBox control)
+        public static void ScrollBottom(ListBox control)
         {
             control.TopIndex = control.Items.Count - 1;
         }
