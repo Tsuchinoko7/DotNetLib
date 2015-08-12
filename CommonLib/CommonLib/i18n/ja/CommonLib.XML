@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommonLib</name>
+    </assembly>
+    <members>
+        <member name="T:t7.Properties.Resource">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:t7.Properties.Resource.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:t7.Properties.Resource.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+        <member name="P:t7.Properties.Resource.Error">
+            <summary>
+              Error に類似しているローカライズされた文字列を検索します。
+            </summary>
+        </member>
+        <member name="T:t7.common.StringUtils">
+            <summary>
+            String Utils
+            </summary>
+        </member>
+        <member name="F:t7.common.StringUtils.SPACE">
+            <summary>
+            A String for a space character.
+            </summary>
+        </member>
+        <member name="F:t7.common.StringUtils.EMPTY">
+            <summary>
+            The empty String <code>""</code>.
+            </summary>
+        </member>
+        <member name="F:t7.common.StringUtils.LF">
+            <summary>
+            A String for linefeed LF ("\n").
+            </summary>
+        </member>
+        <member name="F:t7.common.StringUtils.CR">
+            <summary>
+            A String for carriage return CR ("\r").
+            </summary>
+        </member>
+        <member name="F:t7.common.StringUtils.INDEX_NOT_FOUND">
+            <summary>
+            Represents a failed index search.
+            </summary>
+        </member>
+        <member name="M:t7.common.StringUtils.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:t7.common.StringUtils.IsEmpty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsNotEmpty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsAnyEmpty(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsNoneEmpty(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsBlank(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsNotBlank(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsAnyBlank(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IsNoneBlank(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.Trim(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.TrimToNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.TrimToEmpty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.Strip(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripToNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripToEmpty(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.Strip(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="stripChars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripStart(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="stripChars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripEnd(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="stripChars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripAll(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.StripAll(System.String[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="vals"></param>
+            <param name="stripChars"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.Equals(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val1"></param>
+            <param name="val2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val1"></param>
+            <param name="val2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IndexOf(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="searchChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IndexOf(System.String,System.Char,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="searchChar"></param>
+            <param name="startPos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IndexOf(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="searchString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:t7.common.StringUtils.IndexOf(System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+            <param name="searchString"></param>
+            <param name="startPos"></param>
+            <returns></returns>
+        </member>
+        <member name="T:t7.common.ListBoxUtils">
+            <summary>
+            ListBox Control Utils
+            </summary>
+        </member>
+        <member name="M:t7.common.ListBoxUtils.ScrollTop(System.Windows.Forms.ListBox)">
+            <summary>
+            Scroll to the top
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:t7.common.ListBoxUtils.ScrollBottom(System.Windows.Forms.ListBox)">
+            <summary>
+            Scroll to the bottom
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="P:t7.controls.NumericBox.TextAlign">
+            <summary>
+            コントロールでテキストをどのように配置するかを取得または設定します。
+            </summary>
+        </member>
+    </members>
+</doc>
