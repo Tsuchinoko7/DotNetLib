@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="t7\common\DateUtils.cs" />
     <Compile Include="t7\common\NumberUtils.cs" />
     <Compile Include="t7\common\StringUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

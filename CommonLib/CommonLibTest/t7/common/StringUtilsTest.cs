@@ -1,7 +1,7 @@
-﻿namespace CommonLib.Tests
+﻿namespace t7.common.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using t7.common;
+    using common;
 
     [TestClass()]
     public class StringUtilsTest
