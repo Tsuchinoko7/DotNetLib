@@ -3,8 +3,14 @@
     using System.ComponentModel;
     using System.Windows.Forms;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class NumericBox : TextBox
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public NumericBox()
         {
             this.TextAlign = HorizontalAlignment.Right;
