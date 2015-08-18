@@ -39,5 +39,70 @@
 
             return isDate;
         }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date1"></param>
+        /// <param name="date2"></param>
+        /// <returns></returns>
+        public static double DiffDays(DateTime date1, DateTime date2)
+        {
+            double diff = (date1 - date2).TotalDays;
+
+            return diff < 0 ? diff * -1 : diff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date1"></param>
+        /// <param name="date2"></param>
+        /// <returns></returns>
+        public static double DiffHours(DateTime date1, DateTime date2)
+        {
+            double diff = (date1 - date2).TotalHours;
+
+            return diff < 0 ? diff * -1 : diff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date1"></param>
+        /// <param name="date2"></param>
+        /// <returns></returns>
+        public static double DiffMinutes(DateTime date1, DateTime date2)
+        {
+            double diff = (date1 - date2).TotalMinutes;
+
+            return diff < 0 ? diff * -1 : diff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date1"></param>
+        /// <param name="date2"></param>
+        /// <returns></returns>
+        public static double DiffSeconds(DateTime date1, DateTime date2)
+        {
+            double diff = (date1 - date2).TotalSeconds;
+
+            return diff < 0 ? diff * -1 : diff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date1"></param>
+        /// <param name="date2"></param>
+        /// <returns></returns>
+        public static double DiffMilliseconds(DateTime date1, DateTime date2)
+        {
+            double diff = (date1 - date2).TotalMilliseconds;
+
+            return diff < 0 ? diff * -1 : diff;
+        }
     }
 }
